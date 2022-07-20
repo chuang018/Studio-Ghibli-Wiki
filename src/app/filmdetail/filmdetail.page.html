@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar class="top">
+      <ion-icon name="arrow-back-circle-outline" slot="start" size="large" (click)="back()"></ion-icon>
+     <ion-title *ngIf="flag && cat === 'films'">{{film.title}}</ion-title>
+     <ion-title *ngIf="flag && cat === 'people'">{{people.name}}</ion-title>
+     <ion-title *ngIf="flag && cat === 'locations'">{{loc.name}}</ion-title>
+     <ion-skeleton-text animated style="width: 45%; margin-left: 10px;" *ngIf="!flag"></ion-skeleton-text>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="flag && cat === 'films'">
+
+    <div class="title">
+        <h1>{{film.original_title}}</h1>
+        <p>{{film.original_title_romanised}}</p>
+    </div>
+
+    <div class="desc">
+      <p>{{film.description}}</p>
+    </div>
+
+    <div class="info">
+      <p>Release Date: {{film.release_date}}</p>
+      <p>Running Time: {{film.running_time}} Minutes</p>
+      <p>Director: {{film.director}}</p>
+      <p>Producer: {{film.producer}}</p>
+    </div>
+
+  </div>
+
+  <div *ngIf="flag && cat === 'people'">
+
+    <div class="title">
+        <h1>{{people.name}}</h1>
+    </div>
+
+    <div class="info">
+      <p>Gender: {{people.gender}}</p>
+      <p>Age: {{people.age}}</p>
+      <p>Eye Color: {{people.eye_color}}</p>
+      <p>Hair Color: {{people.hair_color}}</p>
+    </div>
+
+  </div>
+
+  <div *ngIf="flag && cat === 'locations'">
+
+    <div class="title">
+        <h1>{{loc.name}}</h1>
+    </div>
+
+    <div class="info">
+      <p>Climate: {{loc.climate}}</p>
+      <p>Terrain: {{loc.terrain}}</p>
+      <p>Surface Water: {{loc.surface_water}}</p>
+    </div>
+
+  </div>
+
+
+<div *ngIf="!flag">
+  <ion-list class="title-skeleton">
+    <ion-skeleton-text animated style="width: 75%;"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 35%;height: 10px;"></ion-skeleton-text>
+  </ion-list>
+</div>
+
+</ion-content>

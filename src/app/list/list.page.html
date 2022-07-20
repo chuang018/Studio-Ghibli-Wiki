@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar class="top">
+      <ion-icon name="arrow-back-circle-outline" slot="start" size="large" (click)="back()"></ion-icon>
+     <ion-title *ngIf="flag && cat === 'films'">Films</ion-title>
+     <ion-title *ngIf="flag && cat === 'peoples'">Peoples</ion-title>
+     <ion-title *ngIf="flag && cat === 'locations'">Locations</ion-title>
+     <ion-skeleton-text animated style="width: 45%;" *ngIf="!flag"></ion-skeleton-text>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngIf="flag && cat === 'films'">
+    <ion-item  *ngFor="let film of films" routerLink="/detail/films/{{film.id}}">
+      <p>{{film.title}}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="flag && cat === 'peoples'">
+    <ion-item  *ngFor="let people of peoples" routerLink="/detail/people/{{people.id}}">
+      <p>{{people.name}}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="flag && cat === 'locations'">
+    <ion-item  *ngFor="let location of anyArray" routerLink="/detail/locations/{{location.id}}">
+      <p>{{location.name}}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="!flag" style="padding-left: 20px;padding-right:10px;">
+    <ion-skeleton-text animated style="width: 85%;"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 85%;"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 85%;"></ion-skeleton-text>
+  </ion-list>
+
+</ion-content>
