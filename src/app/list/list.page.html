@@ -4,7 +4,7 @@
      <ion-title *ngIf="flag && cat === 'films'">Films</ion-title>
      <ion-title *ngIf="flag && cat === 'peoples'">Peoples</ion-title>
      <ion-title *ngIf="flag && cat === 'locations'">Locations</ion-title>
-     <ion-skeleton-text animated style="width: 45%;" *ngIf="!flag"></ion-skeleton-text>
+     <ion-skeleton-text animated style="width: 45%;margin-left: 10px;" *ngIf="!flag"></ion-skeleton-text>
   </ion-toolbar>
 </ion-header>
 
@@ -29,9 +29,16 @@
   </ion-list>
 
   <ion-list *ngIf="!flag" style="padding-left: 20px;padding-right:10px;">
-    <ion-skeleton-text animated style="width: 85%;"></ion-skeleton-text>
-    <ion-skeleton-text animated style="width: 85%;"></ion-skeleton-text>
-    <ion-skeleton-text animated style="width: 85%;"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 85%;margin-top: 10px;"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 85%;margin-top: 15px;"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 85%;margin-top: 15px;"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 85%;margin-top: 15px;"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 85%;margin-top: 15px;"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 85%;margin-top: 15px;"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 85%;margin-top: 15px;"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 85%;margin-top: 15px;"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 85%;margin-top: 15px;"></ion-skeleton-text>
+    
   </ion-list>
 
 </ion-content>
